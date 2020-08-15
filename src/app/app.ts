@@ -3,10 +3,10 @@ import 'core-js/library';
 import { Logger, LoggerFactory } from './common';
 import { Express, Router } from 'express';
 import { AppConfig } from './config';
-import { AppDataServices } from './data';
 import { ExpressAppFactory } from './express-app-factory';
 import { ApiRouterFactory } from './api';
 import { RestErrorMiddleware } from './common';
+import {AppDataServices } from './services';
 
 const LOGGER: Logger = LoggerFactory.getLogger();
 

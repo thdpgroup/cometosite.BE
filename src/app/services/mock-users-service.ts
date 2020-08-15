@@ -1,4 +1,4 @@
-import { User } from '../../models';
+import { User } from '../models';
 import { UsersService } from './users-service';
 
 export class MockUsersService implements UsersService {

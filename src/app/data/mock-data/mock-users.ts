@@ -1,4 +1,4 @@
-import { User } from '../models';
+import { User } from "../../models";
 
 const MOCK_USERS: Array<User> = [
     new User({

@@ -1,5 +1,6 @@
-import { UsersService, MockUsersService } from './data-services';
-import { MOCK_USERS } from './mock-data';
+import { MOCK_USERS } from '../data/mock-data';
+import { MockUsersService } from './mock-users-service';
+import { UsersService } from './users-service';
 
 export class AppDataServices {
   public usersService: UsersService;

@@ -60,5 +60,13 @@
       "check-separator",
       "check-type"
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["node_modules/*.spec.js"],
+      "rules": {
+        "require-jsdoc": "off"
+      }
+    }
+  ]
 }

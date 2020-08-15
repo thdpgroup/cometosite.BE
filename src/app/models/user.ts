@@ -1,5 +1,5 @@
 import { Model } from './model';
-import { Validatable, Validator, ValidatorError } from '../../common';
+import { Validatable, Validator, ValidatorError } from '../common';
 
 export class User extends Model implements Validatable {
   public firstName: string;
