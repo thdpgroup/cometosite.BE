@@ -1,8 +1,8 @@
 import express = require('express');
 import { Router } from 'express';
-import { AppDataServices } from '../data';
-import { UsersRouter } from './routes/users/users-router';
+import { UsersRouter } from './controllers/users-router';
 import { Logger, LoggerFactory, InvalidResourceUrlError } from '../common';
+import { AppDataServices } from '../services';
 
 ////////////////////
 

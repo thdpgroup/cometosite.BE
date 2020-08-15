@@ -1,5 +1,6 @@
-import { UsersService, User } from '../../../data';
-import { Logger, LoggerFactory, RestController } from '../../../common';
+import { Logger, LoggerFactory, RestController } from '../../common';
+import { UsersService } from '../../services';
+import { User } from '../../models';
 
 export class UsersController extends RestController {
   constructor(private usersService: UsersService) {
