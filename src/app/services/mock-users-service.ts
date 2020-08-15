@@ -1,5 +1,5 @@
 import { User } from '../models';
-import { UsersService } from './users-service';
+import { UsersService } from './contracts';
 
 export class MockUsersService implements UsersService {
   private userMap: Map<string, User>;
