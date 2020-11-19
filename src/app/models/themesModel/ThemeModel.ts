@@ -186,7 +186,7 @@ export interface Metadata {
 export interface SearchIngestedContent {
 }
 
-export interface ThemeForestModel {
+export interface ThemeModel {
     author_exists?: any;
     aggregations: Aggregations;
     suggestions?: any;

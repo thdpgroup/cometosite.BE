@@ -31,8 +31,7 @@
       "single"
     ],
     "semicolon": [
-      true,
-      "always"
+      true
     ],
     "triple-equals": [
       true,

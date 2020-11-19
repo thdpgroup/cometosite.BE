@@ -27,7 +27,11 @@ const errorMiddleware = [
 
 const app: Express = ExpressAppFactory.getExpressApp(appConfig, apiRouter, null, errorMiddleware);
 
-////////////////////
+//------------- config swagger docs -------------
+const swaggerUi = require('swagger-ui-express');
+const YAML = require('yamljs');
+const swaggerDocument = YAML.load(__dirname + "/docs/swagger.yaml");
+app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.listen(appConfig.port, () => {
   LOGGER.info(`Express server listening on port ${appConfig.port}`);
