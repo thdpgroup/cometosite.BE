@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf build",
     "prebuild": "npm run clean",
-    "copy-files": "copyfiles -u 1 ./src/**/*.yaml ./build/",
+    "copy-files": "copyfiles -u 1 ./src/docs/*.yaml ./build/app/",
     "build": "tsc && npm run copy-files",
     "prestart": "npm run build",
     "start": "node ./build/app/app.js",
