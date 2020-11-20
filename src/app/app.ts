@@ -4,7 +4,7 @@ import { Logger, LoggerFactory } from './common';
 import { Express, Router } from 'express';
 import { AppConfig } from './config';
 import { ExpressAppFactory } from './express-app-factory';
-import { ApiRouterFactory } from './api';
+import { ApiRouterFactory } from './controllers';
 import { RestErrorMiddleware } from './common';
 import {AppDataServices } from './services';
 

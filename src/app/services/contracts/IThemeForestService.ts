@@ -1,6 +1,6 @@
 import { ThemeModel } from "../../models";
 
 export interface IThemeForestService {
-  getAll(): Promise<Array<ThemeModel>>;
+  getAll(): Promise<ThemeModel[]>;
   getBycategory(id: string): Promise<ThemeModel>;
 }

@@ -186,7 +186,7 @@ export interface Metadata {
 export interface SearchIngestedContent {
 }
 
-export interface ThemeModel {
+export class ThemeModel {
     author_exists?: any;
     aggregations: Aggregations;
     suggestions?: any;
