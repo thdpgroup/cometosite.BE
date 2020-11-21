@@ -11,15 +11,15 @@ export class ThemesService implements IThemeForestService {
   constructor() {
   }
 
-  getAll(): Promise<ThemeModel[]> {
-    const url = "https://themeforest.net/category/ecommerce?sort=sales&tags=fashion#content";
+  async getAll(): Promise<ThemeModel[]> {
+    const url = "https://themeforest.net/shopfront-api/search?category=site-templates%2Fretail%2Fhealth-beauty&page=1&page_size=30&site=themeforest.net&sort_by=sales";
     return axios.get(url).then(result => {
       this.LOGGER.debug(result.data);
       return (result ? result.data : null);
     }).catch((exception) => {
       this.LOGGER.debug("Error of Notify user status changed API:");
       this.LOGGER.debug(exception);
-    });;
+    });
   };
 
   getBycategory(id: string): Promise<ThemeModel> {
