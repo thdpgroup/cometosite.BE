@@ -4,6 +4,7 @@ import express = require('express');
 import bodyParser = require('body-parser');
 import morgan = require('morgan');
 import { Logger, LoggerFactory } from './common';
+import * as cors from 'cors';
 
 export class ExpressAppFactory {
 
@@ -19,6 +20,7 @@ export class ExpressAppFactory {
 
     const app: Express = express();
 
+    app.use(cors());
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
 
