@@ -25,6 +25,7 @@ export class ApiRouterFactory {
     router.use('/themes', themesRouter);
 
     router.all('*', (req, res, next) => {
+      ApiRouterFactory.LOGGER.info('-- Route mapping missing --');
       next(new InvalidResourceUrlError());
     });
 

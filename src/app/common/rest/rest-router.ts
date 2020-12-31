@@ -13,15 +13,22 @@ export abstract class RestRouter {
 
   wrapParamFn(controller: RestController, handlerFn: Function) {
     return (req, res, next, param) => {
-      return Promise.resolve(handlerFn.bind(controller)(req, res, next, param))
+      var ctrllerFunc = handlerFn.bind(controller);
+      var data = ctrllerFunc(req, res, next, param);
+      return Promise.resolve(data)
         .catch(err => next(err));
     };
   }
 
   wrapRouteFn(controller: RestController, handlerFn: Function) {
     return (req, res, next) => {
-      return Promise.resolve(handlerFn.bind(controller)(req, res, next))
-        .catch(err => next(err));
+      var ctrllerFunc = handlerFn.bind(controller);
+      var data = ctrllerFunc(req, res, next);
+      
+      return Promise.resolve(data)
+        .catch(err => {
+          next(err);
+        });
     };
   }
 

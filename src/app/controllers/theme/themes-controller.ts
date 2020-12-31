@@ -10,7 +10,7 @@ export class ThemesController extends RestController {
   private static readonly LOGGER: Logger = LoggerFactory.getLogger();
 
   getAll(req, res, next): Promise<any> {
-    ThemesController.LOGGER.debug('Retrieving all users');
+    ThemesController.LOGGER.info('Retrieving all users');
 
     return this.themesService.getAll()
       .then((themes: Array<ThemeModel>) => {
@@ -18,13 +18,35 @@ export class ThemesController extends RestController {
       });
   }
 
-  getBycategory(req, res, next, categoryId: string): any {
-    return this.themesService.getBycategory(categoryId)
-      .then((theme: ThemeModel) => {
-        this.validateResourceFound(theme);
-        req.theme = theme;
-        next();
+  getThemeBycategory(req, res, next): Promise<any> {
+    ThemesController.LOGGER.info('Retrieving theme by category');
+    const {
+      category,
+      page
+    } = req.body;
+
+    if(category == 'marketing') {
+      return this.themesService.getThemeMarketing(page)
+      .then((themes: Array<ThemeModel>) => {
+        this.respond(res, themes);
       });
+    }
+
+    if(category == 'ecom') {
+      return this.themesService.getThemeEcom(page)
+      .then((themes: Array<ThemeModel>) => {
+        this.respond(res, themes);
+      });
+    }
+
+    if(category == 'blog') {
+      return this.themesService.getThemeBlog(page)
+      .then((themes: Array<ThemeModel>) => {
+        this.respond(res, themes);
+      });
+    }
+    
+    // ---- return not found ----------
   }
 
 }
